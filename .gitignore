@@ -4,3 +4,4 @@ __pycache__/
 processed_events.txt
 logs/*.tmp
 .DS_Store
+.idea/

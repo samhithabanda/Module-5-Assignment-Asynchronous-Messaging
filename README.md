@@ -111,6 +111,8 @@ To start fresh between demos, delete `processed_events.txt`.
 
 Full logs for every scenario are in [`logs/`](logs/).
 
+The screenshots come from a later run against RabbitMQ in Docker, so their `event_id`s and timestamps differ from the log excerpts. The behavior is the same.
+
 ### 1. Successful message processing and two competing consumers
 
 Commands:
@@ -196,7 +198,20 @@ worker-2 ([logs/2-crash-redelivery-worker-2.log](logs/2-crash-redelivery-worker-
 
 The system kept running: worker-2 and the broker were unaffected, and all four orders were processed.
 
-<!-- TODO: add screenshot here -->
+**Screenshots:**
+
+*Producer: publishes ORD-0101 to ORD-0104*
+
+![Producer: publishes ORD-0101 to ORD-0104](screenshots/2-redelivery-producer.png)
+
+*worker-1: receives ORD-0101 and crashes before sending the ACK*
+
+![worker-1: receives ORD-0101 and crashes before sending the ACK](screenshots/2-redelivery-worker-1.png)
+
+*worker-2: receives ORD-0101 again, marked REDELIVERED, and processes it*
+
+![worker-2: receives ORD-0101 again, marked REDELIVERED, and processes it](screenshots/2-redelivery-worker-2.png)
+
 
 ### 3. Duplicate handling
 
@@ -233,7 +248,20 @@ worker-2 received the duplicate ([logs/3-duplicate-worker-2.log](logs/3-duplicat
 
 **Result:** the business action for `ORD-0201` ran only once. The second copy was detected, logged, and ACKed without being processed again. This worked across workers because the set of processed `event_id`s is shared.
 
-<!-- TODO: add screenshot here -->
+**Screenshots:**
+
+*Producer: publishes ORD-0201 a second time with the same event_id*
+
+![Producer: publishes ORD-0201 a second time with the same event_id](screenshots/3-duplicate-producer.png)
+
+*worker-1: processes ORD-0201, then detects the duplicate and skips it*
+
+![worker-1: processes ORD-0201, then detects the duplicate and skips it](screenshots/3-duplicate-worker-1.png)
+
+*worker-2: processes its own orders normally*
+
+![worker-2: processes its own orders normally](screenshots/3-duplicate-worker-2.png)
+
 
 ### 4. Bonus: crash after processing but before the ACK
 
@@ -264,7 +292,20 @@ worker-2 ([logs/4-crash-after-process-worker-2.log](logs/4-crash-after-process-w
 
 **Result:** RabbitMQ redelivered `ORD-0301` because it was never ACKed. Without the idempotency check, the order would have been processed twice. With it, worker-2 detects that the event was already handled and only ACKs it.
 
-<!-- TODO: add RabbitMQ management UI screenshot (Queues tab) here -->
+**Screenshots:**
+
+*Producer: publishes ORD-0301 to ORD-0304*
+
+![Producer: publishes ORD-0301 to ORD-0304](screenshots/4-crash-after-process-producer.png)
+
+*worker-1: finishes ORD-0301, then crashes before sending the ACK*
+
+![worker-1: finishes ORD-0301, then crashes before sending the ACK](screenshots/4-crash-after-process-worker-1.png)
+
+*worker-2: receives ORD-0301 as REDELIVERED, detects it as a duplicate, and does not process it again*
+
+![worker-2: receives ORD-0301 as REDELIVERED, detects it as a duplicate, and does not process it again](screenshots/4-crash-after-process-worker-2.png)
+
 
 ---
 
