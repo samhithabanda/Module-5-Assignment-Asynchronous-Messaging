@@ -156,7 +156,20 @@ worker-2 ([logs/1-competing-worker-2.log](logs/1-competing-worker-2.log)):
 
 **Result:** the 10 orders were split between the two workers, and each order was processed by exactly one of them (none twice, none missing).
 
-<!-- TODO: add screenshot of the three terminals here -->
+**Screenshots:**
+
+*Producer: publishes ORD-0001 to ORD-0010*
+
+![Producer: publishes ORD-0001 to ORD-0010](screenshots/1-competing-producer.png)
+
+*worker-1: processes ORD-0001, 0003, 0006, 0008, 0009*
+
+![worker-1: processes ORD-0001, 0003, 0006, 0008, 0009](screenshots/1-competing-worker-1.png)
+
+*worker-2: processes ORD-0002, 0004, 0005, 0007, 0010*
+
+![worker-2: processes ORD-0002, 0004, 0005, 0007, 0010](screenshots/1-competing-worker-2.png)
+
 
 ### 2. Failure and redelivery
 
