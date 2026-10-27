@@ -1,0 +1,3 @@
+19:50:09 [worker-1] Waiting for messages on queue 'orders'. Press CTRL+C to exit.
+19:50:12 [worker-1] Received order ORD-0101 event_id=830ceddc-003c-41fd-b277-eec98d5e12e8
+19:50:12 [worker-1] SIMULATED CRASH while processing ORD-0101 - exiting WITHOUT ACK

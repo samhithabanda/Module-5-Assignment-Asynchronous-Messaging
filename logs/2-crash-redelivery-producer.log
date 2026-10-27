@@ -1,0 +1,5 @@
+19:50:12 [producer] Published {"event_id": "830ceddc-003c-41fd-b277-eec98d5e12e8", "order_id": "ORD-0101", "item_id": "ITEM-238", "quantity": 1}
+19:50:12 [producer] Published {"event_id": "8bdd2ab6-6072-4375-b128-d0cb8db077c4", "order_id": "ORD-0102", "item_id": "ITEM-294", "quantity": 2}
+19:50:12 [producer] Published {"event_id": "46539e93-4216-4f26-90bb-5daf120e7315", "order_id": "ORD-0103", "item_id": "ITEM-386", "quantity": 1}
+19:50:12 [producer] Published {"event_id": "796c9ac5-63f0-43ad-a630-dc83981d0da5", "order_id": "ORD-0104", "item_id": "ITEM-552", "quantity": 1}
+19:50:12 [producer] Done. 4 message(s) sent to queue 'orders'.

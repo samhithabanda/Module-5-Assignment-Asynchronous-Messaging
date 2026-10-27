@@ -1,0 +1,16 @@
+19:50:29 [worker-2] Waiting for messages on queue 'orders'. Press CTRL+C to exit.
+19:50:31 [worker-2] Received order ORD-0302 event_id=4d0c002b-812e-4654-8f2d-d505d91b1268
+19:50:31 [worker-2] Processing order ORD-0302: item=ITEM-178 quantity=2
+19:50:32 [worker-2] Finished order ORD-0302
+19:50:32 [worker-2] ACK sent for ORD-0302
+19:50:32 [worker-2] Received order ORD-0303 event_id=d3f6c62f-c060-491c-8b30-6be96f0b748a
+19:50:32 [worker-2] Processing order ORD-0303: item=ITEM-943 quantity=4
+19:50:33 [worker-2] Finished order ORD-0303
+19:50:33 [worker-2] ACK sent for ORD-0303
+19:50:33 [worker-2] Received order ORD-0301 event_id=e6fc5e9a-7191-4da1-81f3-e42d35e9a4f0 (REDELIVERED)
+19:50:33 [worker-2] DUPLICATE detected for event_id=e6fc5e9a-7191-4da1-81f3-e42d35e9a4f0 (order ORD-0301) - skipping business action
+19:50:33 [worker-2] ACK sent for duplicate ORD-0301
+19:50:33 [worker-2] Received order ORD-0304 event_id=30438638-c26b-4fc6-b71c-d2aebd02477a
+19:50:33 [worker-2] Processing order ORD-0304: item=ITEM-312 quantity=3
+19:50:34 [worker-2] Finished order ORD-0304
+19:50:34 [worker-2] ACK sent for ORD-0304

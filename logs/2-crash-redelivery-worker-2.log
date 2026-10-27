@@ -1,0 +1,17 @@
+19:50:11 [worker-2] Waiting for messages on queue 'orders'. Press CTRL+C to exit.
+19:50:12 [worker-2] Received order ORD-0102 event_id=8bdd2ab6-6072-4375-b128-d0cb8db077c4
+19:50:12 [worker-2] Processing order ORD-0102: item=ITEM-294 quantity=2
+19:50:13 [worker-2] Finished order ORD-0102
+19:50:13 [worker-2] ACK sent for ORD-0102
+19:50:13 [worker-2] Received order ORD-0101 event_id=830ceddc-003c-41fd-b277-eec98d5e12e8 (REDELIVERED)
+19:50:13 [worker-2] Processing order ORD-0101: item=ITEM-238 quantity=1
+19:50:14 [worker-2] Finished order ORD-0101
+19:50:14 [worker-2] ACK sent for ORD-0101
+19:50:14 [worker-2] Received order ORD-0103 event_id=46539e93-4216-4f26-90bb-5daf120e7315
+19:50:14 [worker-2] Processing order ORD-0103: item=ITEM-386 quantity=1
+19:50:15 [worker-2] Finished order ORD-0103
+19:50:15 [worker-2] ACK sent for ORD-0103
+19:50:15 [worker-2] Received order ORD-0104 event_id=796c9ac5-63f0-43ad-a630-dc83981d0da5
+19:50:15 [worker-2] Processing order ORD-0104: item=ITEM-552 quantity=1
+19:50:16 [worker-2] Finished order ORD-0104
+19:50:16 [worker-2] ACK sent for ORD-0104

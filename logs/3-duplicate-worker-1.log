@@ -1,0 +1,9 @@
+19:50:18 [worker-1] Waiting for messages on queue 'orders'. Press CTRL+C to exit.
+19:50:21 [worker-1] Received order ORD-0201 event_id=9edf129e-31ce-4db4-827b-0bf190a33c3b
+19:50:21 [worker-1] Processing order ORD-0201: item=ITEM-488 quantity=2
+19:50:22 [worker-1] Finished order ORD-0201
+19:50:22 [worker-1] ACK sent for ORD-0201
+19:50:22 [worker-1] Received order ORD-0203 event_id=072b2089-cab9-4d85-9d54-8b93cbd0f624
+19:50:22 [worker-1] Processing order ORD-0203: item=ITEM-851 quantity=3
+19:50:23 [worker-1] Finished order ORD-0203
+19:50:23 [worker-1] ACK sent for ORD-0203

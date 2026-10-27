@@ -1,0 +1,5 @@
+19:50:28 [worker-1] Waiting for messages on queue 'orders'. Press CTRL+C to exit.
+19:50:31 [worker-1] Received order ORD-0301 event_id=e6fc5e9a-7191-4da1-81f3-e42d35e9a4f0
+19:50:31 [worker-1] Processing order ORD-0301: item=ITEM-927 quantity=3
+19:50:32 [worker-1] Finished order ORD-0301
+19:50:32 [worker-1] SIMULATED CRASH after processing ORD-0301 but BEFORE ACK - exiting
